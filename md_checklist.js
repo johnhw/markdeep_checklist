@@ -2,34 +2,72 @@ var checklist_elements = {};
 
 var pagetitle="markdeep-checklist-blank";
 
-function add_reset()
-{
-
-    var ix = 0;
-    var uls = document.getElementsByTagName("ul");
-    for(let element of uls)
+function add_reset_button(ul, toc)
+{    
+    var child_elts = ul.children;      
+    for(let elt of child_elts)
     {
         
-        var child_elts = element.children;
-        
-        var checks = false;
-        for(let elt of child_elts)
+        if(elt.classList.contains("unchecked"))
         {
-            if(elt.classList.contains("unchecked"))
-            {
-                var name =  ix + "-" + elt.innerHTML;                
-                elt.setAttribute("checklist_name", name);
-                elt.setAttribute("clear_index", ix);
-                checks = true;
-            }
+            var name =  toc + "-" + elt.innerHTML;                                
+            elt.setAttribute("toc", toc);
+            elt.setAttribute("checklist_name", name);
         }
-        if(checks)
-        {
-            element.innerHTML = '<button onclick="reset_list('+ix+')" class="clear-button"> Reset </button> '  + element.innerHTML;
-        }
-        ix += 1;
     }
 }
+
+
+function reset_checklist(toc)
+{
+    var check_items = document.getElementsByClassName("unchecked");    
+    // clear all items with this tagged group index
+    for(let elt of check_items)
+    {             
+            var elt_toc = elt.getAttribute("toc");
+            if(elt_toc && elt_toc.startsWith(toc))
+            {
+                set_checklist(elt, false);
+            }
+    }
+}
+
+function add_reset()
+{
+    var ix = 0;    
+    // find anchors with a name like "toc1.1.2"
+    var anchors = document.getElementsByTagName("a");
+
+    for(let element of anchors)
+    {    
+        
+        var name = element.getAttribute("name");
+        if(element.classList.contains("target") && name.startsWith("toc"))
+            {                
+                var toc = name;
+                // search subsequent elements
+                var p_element = element.nextSibling;
+                var attached = false;
+                while(p_element!=null)
+                {
+                    // add button to next header element                
+                    if(p_element.tagName && p_element.tagName.startsWith("H") && !attached)
+                    {
+                        var toc_name = "'" + toc + "'";
+                        p_element.innerHTML = '<button onclick="reset_checklist('+toc_name+')" class="clear-button"> Reset </button> '  + p_element.innerHTML;
+                        attached = true;
+                    }
+                    // add reset tag to this element
+                    if(p_element.tagName=='UL')
+                    {
+                        add_reset_button(p_element, toc);
+                    }
+                    p_element = p_element.nextSibling;
+                }
+            }        
+    }
+}
+
 
 function reset_all()
 {

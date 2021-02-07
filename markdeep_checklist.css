@@ -12,10 +12,10 @@ body
 
 .clear-button
 {
-    text-align: right;
-    display: inline-block;
-    padding: 0.5em;
-    margin-left: 82%;
+    float: right;
+    
+    padding: 0.75em;
+    
     background-color: #ffffff;
     border-radius: 2px;
 
