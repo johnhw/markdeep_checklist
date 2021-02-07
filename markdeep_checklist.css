@@ -1,0 +1,69 @@
+
+.md ul 
+{
+    
+}
+
+body 
+{
+    background-color: #eeeeee;
+    font-family: sans-serif;
+}
+
+.clear-button
+{
+    text-align: right;
+    display: inline-block;
+    padding: 0.5em;
+    margin-left: 82%;
+    background-color: #ffffff;
+    border-radius: 2px;
+
+}
+
+.md li.unchecked.swipe-uncheck
+{
+    background-color: #ffffff;
+}
+
+.md li.unchecked.swipe-check
+{
+    background-color: #aaffaa;
+    opacity: 50%;
+    box-shadow: 2px 2px 2px black inset;
+ 
+}
+ 
+.md li.unchecked.swipe-check:before
+{
+    content: "\2713";    
+    font-size: 30;    
+    float: right;
+    color: #004400;    
+    
+}
+
+
+.md li.unchecked 
+{
+   
+    border-radius: 10px;
+    margin: 0.95em;
+    padding: 0.75em;
+    padding-left: 2em;
+    background-color: #ffffff;
+    
+    box-shadow: 3px 3px 2px grey;
+    
+}
+
+
+
+.md li.unchecked:before 
+{
+    content: "\2610";    
+    font-size: 30;
+    padding-right: 1em;
+    
+    float: right;
+}
