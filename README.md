@@ -1,8 +1,10 @@
 # markdeep_checklist
-Adds simple, clickable checklists to [Markdeep](https://casual-effects.com/markdeep/) documents. Makes it quick and easy to create action checklists. Checks are persisted in the brower's local storage, 
+Adds simple, clickable checklists to [Markdeep](https://casual-effects.com/markdeep/) documents. Makes it quick and easy to create action checklists. Checks persist in the brower's local storage, 
 so refreshing the page won't lose your checks.
 
 <img src="imgs/screenshot_1.png">
+
+Which was generated from this source:
 
 ```markdown
 
@@ -29,7 +31,7 @@ so refreshing the page won't lose your checks.
 
 ## Usage
 
-Add the following to your `.md.html` file, just before including `markdeep`
+Add the following to the end of your `.md.html` file, just before including `markdeep` js file.
 
 ```html
 <link rel="stylesheet" href="markdeep_checklist.css" type="text/css" ></link>
