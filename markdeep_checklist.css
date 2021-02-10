@@ -7,23 +7,35 @@
 body 
 {
     background-color: #eeeeee;
-    font-family: sans-serif;
+    font-family: sans-serif;    
 }
 
 .clear-button
 {
     float: right;
     
-    padding: 0.75em;
+    padding: 0.5em;
+    font-size: 16;
     
     background-color: #ffffff;
     border-radius: 2px;
 
 }
 
+.md em.asterisk
+{
+    color: #de3333;
+    font-weight: bold;
+    
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
 .md li.unchecked.swipe-uncheck
 {
     background-color: #ffffff;
+
 }
 
 .md li.unchecked.swipe-check
@@ -36,8 +48,8 @@ body
  
 .md li.unchecked.swipe-check:before
 {
-    content: "\2713";    
-    font-size: 30;    
+    content: "\2611";    
+    font-size: 40;    
     float: right;
     color: #004400;    
     
@@ -46,7 +58,7 @@ body
 
 .md li.unchecked 
 {
-   
+    
     border-radius: 10px;
     margin: 0.95em;
     padding: 0.75em;
@@ -62,7 +74,8 @@ body
 .md li.unchecked:before 
 {
     content: "\2610";    
-    font-size: 30;
+    
+    font-size: 40;
     padding-right: 1em;
     
     float: right;
