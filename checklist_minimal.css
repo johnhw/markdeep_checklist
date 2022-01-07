@@ -1,0 +1,114 @@
+
+.md ul 
+{
+    
+}
+
+body 
+{
+    background-color: #ffffff;
+    font-family: sans-serif;    
+    font-size: 18;
+    
+}
+
+
+.clear-button
+{
+    float: right;
+    
+    padding: 0.5em;
+    font-size: 16;
+    /*visibility: hidden;*/
+    background-color: #ffffff;
+    border-radius: 2px;
+
+}
+
+.md em.asterisk
+{
+    color: #de3333;
+    font-weight: bold;
+    
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+.md li.unchecked.swipe-uncheck
+{
+    background-color: #ffffff;
+    
+
+}
+
+.md li.unchecked.swipe-check
+{
+    background-color: #aaffaa;
+    opacity: 50%;
+    box-shadow: 2px 2px 2px black inset; 
+ 
+}
+ 
+.md li.unchecked.swipe-check:before
+{
+    /*content: "\2611";    
+    font-size: 40;    
+    float: right;
+    color: #004400;    
+    */
+    
+}
+
+
+.md li.unchecked 
+{
+    
+    border-radius: 0px;
+    margin: 0.0em;
+    padding: 0.2em;
+    padding-left: 2em;
+    
+    background-color: #ffffff;
+    
+    
+}
+
+
+
+.md li.unchecked:before 
+{
+    counter-increment: ckitem;
+    /*content: counter(h1) "." counter(h2) "\00a0\00a0" counter(ckitem) "";    */
+    content: counter(ckitem);    
+    
+    font-size: 16;
+    padding-right: 4em;
+    font-weight: bold;
+    float: left;
+}
+
+
+
+.md li.unchecked:after 
+{
+
+    content: "\2610 ";    
+    
+    font-size: 16;
+    padding-right: 4em;
+    
+    float: right;
+}
+
+@media print
+{
+    .md h1, .md h2 {page-break-before:always}
+}
+
+
+.md h2
+{
+    counter-reset: ckitem;  
+
+}
