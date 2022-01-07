@@ -106,7 +106,7 @@ function make_checks() {
 
     var title_elt = document.getElementsByClassName("title");
     if (title_elt && title_elt[0])
-        page_title = "markdeep-checklist-" + title_elt[0].innerHTML;
+        pagetitle = "markdeep-checklist-" + title_elt[0].innerHTML;
 
 
     add_reset();

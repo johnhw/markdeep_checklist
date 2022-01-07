@@ -40,3 +40,6 @@ Add the following to the end of your `.md.html` file, just before including `mar
 window.markdeepOptions = {tocStyle:'none', onLoad:make_checks};
 </script>
 ```
+
+## Minimal style
+You can use `markdeep_checklist_minimal.css` for a simpler style that is more compact.
